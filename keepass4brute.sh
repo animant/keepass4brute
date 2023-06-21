@@ -27,7 +27,7 @@ while read -r line; do
   n_tested=$((n_tested + 1))
   /bin/echo -ne "[+] Words tested: $n_tested/$n_total ($line)                                          \r"
 
-  /bin/echo $line | keepassxc-cli open $1 &> /dev/null
+  /bin/echo "$line" | keepassxc-cli open $1 &> /dev/null
   if [ $? -eq 0 ]
   then
     /bin/echo -ne "\n"
